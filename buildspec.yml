@@ -4,13 +4,16 @@ phases:
   install:
     runtime-versions:
       java: corretto21
+    commands:
+      - echo Installing dependencies...
+      - mvn install -DskipTests=true
   build:
     commands:
       - echo Building, Testing and packaging the application...
       - mvn package
   post_build:
     commands:
-      - echo Build, Testing and packaging completed.
+      - echo Build completed on `date`
 artifacts:
   files:
     - target/*.jar
