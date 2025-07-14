@@ -15,8 +15,9 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
+  base-directory: target
   files:
-    - target/*.jar
+      - '*.jar'
   discard-paths: yes
 
 cache:
